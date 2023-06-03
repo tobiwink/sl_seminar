@@ -1,0 +1,117 @@
+% !TEX TS-program = pdflatexmk
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%  Stand: 2022/04/20
+%%  ulgr@fmath.uni-tuebingen.de
+%%  bearbeitet von
+%%  tobias.winkler@student.uni-tuebingen.de
+%%  valentin.pfisterer@student.uni-tuebingen.de
+%%  
+% Wir verwenden KOMA-Script als Basis
+% Marcus Kohm: KOMA-Script
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\documentclass[%				%  
+%	,ngerman					%  
+%	,fontsize	= 12pt		% auskommentiert = 11pt		 	
+%	,parskip	= half-		% Absatz mit Leerzeile
+%	,BCOR		= 0mm		% Bindekorrektur für Klemmmappe
+%	,leqno					% Nummern der Formeln etc. Links
+%	,abstract	= false		% Zusammenfassung
+%	,headings	= small		% oder large oder normal
+%	,DIV		= calc		% Aufteilung der Seite
+	]{beamer}   			% KOMA-Script als Basis; https://komascript.de/~mkohm/scrguide.pdf
+	
+%% -- 
+\newcommand{\authors}{Valentin Pfisterer, Tobias Winkler}
+\newcommand{\authorss}{V. Pfisterer, T. Winkler}
+%% -- zu ändern pro Übungsblatt
+\newcommand{\numbering}{Seminar}
+
+%--- Theme
+\usetheme{Berkeley}
+\makeatletter
+  \setbeamertemplate{sidebar \beamer@sidebarside}
+  {
+    \beamer@tempdim=\beamer@sidebarwidth%
+    \advance\beamer@tempdim by -6pt%
+    \vskip4em%
+    \insertverticalnavigation{\beamer@sidebarwidth}%
+    \vfill
+    \ifx\beamer@sidebarside\beamer@lefttext%
+    \else%
+      \usebeamercolor{normal text}%
+      \llap{\usebeamertemplate***{navigation symbols}\hskip0.1cm}%
+      \vskip2pt%
+    \fi%
+  }%
+
+  \ifx\beamer@sidebarside\beamer@lefttext%
+    \defbeamertemplate*{sidebar right}{sidebar theme}
+    {%
+      \vfill%
+      \llap{\usebeamertemplate***{navigation symbols}\hskip0.1cm}%
+      \vskip2pt}
+  \fi
+
+\setbeamertemplate{section in sidebar}%{sidebar theme}
+{%
+  \vbox{%
+    \vskip1ex%
+    \beamer@sidebarformat{3pt}{section in sidebar}{\insertsectionheadnumber
+~\insertsectionhead}%
+  }%
+}
+\setbeamertemplate{section in sidebar shaded}%{sidebar theme}
+{%
+  \vbox{%
+    \vskip1ex%
+    \beamer@sidebarformat{3pt}{section in sidebar shaded}{\insertsectionheadnumber
+~\insertsectionhead}%
+  }%
+}
+\makeatother
+
+\title{Some title}
+\author{author}
+\institute{University of Tübingen}
+\date{\today}
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Table of Contents}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+
+%% -- Die Vorlagen
+%% --
+\input{./preamble/art_beamer}	% Layout etc.
+\input{./preamble/defn_beamer}	% Definitionen
+
+
+% \input{./content/main} %% je nach Blatt ändern
+%% --
+\begin{document}
+
+%% -- Die üblichen Angaben
+% \pagestyle{headings}
+\title{The strong universal consistency of the \\ kernel estimate \& the k-NN estimate}
+\subtitle{--- Seminar: Statistical Learning ---}
+\author{\authors{}}
+\date{May 19, 2023} % oder \today eingeben
+%% --
+
+% \maketitle
+%% --
+
+\frame{\titlepage}
+
+\input{./content/beamer} %% je nach Blatt ändern
+
+
+
+
+%% --
+\end{document}
+

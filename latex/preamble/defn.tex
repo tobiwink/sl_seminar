@@ -1,0 +1,108 @@
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Einige sinnvolle Definitionen
+%% und nützliche Pakete
+%% Eigene Ergäzungen in My-Def.tex
+%% Stand: 2022/04/20
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% -- Zahlen
+\newcommand{\N}{\mathbb{N}}		% Natürliche Zahlen
+\newcommand{\Z}{\mathbb{Z}}		% Ganze Zahlen
+\newcommand{\Q}{\mathbb{Q}}		% Rationale Zahlen
+\newcommand{\R}{\mathbb{R}}		% Reelle Zahlen
+\newcommand{\C}{\mathbb{C}}		% Komplexe Zahlen
+% \newcommand{\K}{\mathbb{K}}		% Körperzeichen
+\newcommand{\F}{\mathbb{F}}		% Galoiskörper
+% \usepackage[sans]{dsfont}       % für die doppelte 1
+\usepackage{dsfont}
+
+
+%% -- Norm, Absolutbetrag, duales Paar siehe mathtools Abschnitt 3.6
+\DeclarePairedDelimiterX{\norm}[1]{\lVert}{\rVert}{\ifblank{#1}{\:\cdot\:}{#1}}
+\DeclarePairedDelimiterX{\abs}[1]{\lvert}{\rvert}{\ifblank{#1}{\:\cdot\:}{#1}}
+\DeclarePairedDelimiterX{\dualp}[2]{\langle}{\rangle}{\ifblank{#1#2}{\,\cdot\,,\cdot\,}{\,#1,#2\,}}
+
+
+%% -- Intervalle 
+\newcommand{\interval}[1]{\left[ #1 \right]}	
+\newcommand{\ointerval}[1]{\left] #1 \right[}	
+\newcommand{\rointerval}[1]{\left[ #1 \right[}
+\newcommand{\lointerval}[1]{\left] #1 \right]}
+
+
+%% -- Ableitungen
+%% -- auch als Beispiel für mathematische Ausdrücke
+\newcommand*{\ds}{\mathop{}\!\mathrm{d}{s}}         % \ds = ds, 
+\newcommand*{\dt}{\mathop{}\!\mathrm{d}{t}}         % \dt = dt, 
+\newcommand*{\dx}{\mathop{}\!\mathrm{d}{x}}         % \dx = dx,
+\newcommand*{\dy}{\mathop{}\!\mathrm{d}{y}}         % \dy = dy,
+\newcommand*{\dP}{\mathop{}\!\mathrm{d}{\mathbb{P}}}         % \dy = dy,
+\newcommand*{\diff}[1]{\mathop{}\!\mathrm{d}{#1}}	% \diff{\mu} = d\mu, 
+\newcommand*{\dL}[1][1]{\mathop{}\!\mathrm{d}{\mathcal{L}^{#1}}}
+                                                    % \dL = dL^1
+
+
+
+%% var-Symbole anstelle der Originalen, besser zu unterscheiden
+%% --
+\let\ORGvarepsilon=\varepsilon
+\let\varepsilon=\epsilon
+\let\epsilon=\ORGvarepsilon
+%
+\let\ORGvarrho=\varrho
+\let\varrho=\rho
+\let\rho=\ORGvarrho
+%
+\let\ORGvartheta=\vartheta
+\let\vartheta=\theta
+\let\theta=\ORGvartheta
+%
+\let\ORGvarphi=\varphi
+\let\varphi=\phi
+\let\phi=\ORGvarphi
+%
+\let\ORGvarleq=\leqslant
+\let\leqslant=\leq
+\let\leq=\ORGvarleq
+%
+\let\ORGvargeq=\geqslant
+\let\geqslant=\geq
+\let\geq=\ORGvargeq
+
+
+%% -- Träger
+\newcommand{\supp}{\mathrm{supp}}
+
+
+%% -- abzählbare Summen, Vereinigungen, etc.
+\newcommand{\sumk}[1][1]{\sum_{k=#1}^{\infty}}
+\newcommand{\suml}[1][1]{\sum_{l=#1}^{\infty}}
+\newcommand{\cupk}[1][1]{\bigcup_{k=#1}^{\infty}}
+\newcommand{\cupl}[1][1]{\bigcup_{l=#1}^{\infty}}
+\newcommand{\limk}{\lim_{k \to \infty}}
+\newcommand{\limn}{\lim_{n \to \infty}}
+
+
+%% -- komplexe Zahlen
+\newcommand{\cre}[1]{\mathrm{Re}(#1)}
+\newcommand{\cim}[1]{\mathrm{Im}(#1)}
+\newcommand{\I}{\mathrm{i}}
+
+%% -- stochastische Konvergenzen
+\newcommand{\tod}{\overset{d}{\to}}
+\newcommand{\tov}{\overset{v}{\to}}
+
+\newcommand{\todn}{\underset{n \to \infty}{\overset{d}{\longrightarrow}}}
+\newcommand{\tovn}{\underset{n \to \infty}{\overset{v}{\longrightarrow}}}
+
+
+%% --
+% Menge der reellwertigen stetigen Abbildungen mit kompaktem Träger
+\newcommand{\K}[1]{\mathcal{K}(#1)}
+
+\newcommand{\med}[1]{\mathrm{Median}(#1)}
+\newcommand{\mode}[1]{\mathrm{Mode}(#1)}
+\newcommand{\ev}[1]{\mathbb{E}\!\left(#1\right)}
+\newcommand{\var}[1]{\mathrm{Var}\!\left(#1\right)}
+\newcommand{\ind}[1]{\mathds{1}_{#1}}
+\newcommand{\pro}[1]{\mathbb{P}\!\left(#1\right)}

@@ -1,0 +1,56 @@
+% !TEX TS-program = pdflatexmk
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%  Stand: 2022/04/20
+%%  ulgr@fmath.uni-tuebingen.de
+%%  bearbeitet von
+%%  tobias.winkler@student.uni-tuebingen.de
+%%  valentin.pfisterer@student.uni-tuebingen.de
+%%  
+% Wir verwenden KOMA-Script als Basis
+% Marcus Kohm: KOMA-Script
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\documentclass[%				%  
+	,ngerman					%  
+	,fontsize	= 12pt		% auskommentiert = 11pt		 	
+	,parskip	= half-		% Absatz mit Leerzeile
+	,BCOR		= 0mm		% Bindekorrektur für Klemmmappe
+	,leqno					% Nummern der Formeln etc. Links
+	,abstract	= false		% Zusammenfassung
+	,headings	= small		% oder large oder normal
+	,DIV		= calc		% Aufteilung der Seite
+	]{scrartcl}   			% KOMA-Script als Basis; https://komascript.de/~mkohm/scrguide.pdf
+	
+%% -- 
+\newcommand{\authors}{Valentin Pfisterer, Tobias Winkler}
+\newcommand{\authorss}{V. Pfisterer, T. Winkler}
+%% -- zu ändern pro Übungsblatt
+\newcommand{\numbering}{Seminar}
+	
+
+%% -- Die Vorlagen
+%% --
+\input{./preamble/art}	% Layout etc.
+\input{./preamble/defn}	% Definitionen
+
+%% --
+\begin{document}
+
+%% -- Die üblichen Angaben
+\pagestyle{headings}
+\title{\numbering}
+\subtitle{Statistisches Lernen}
+\author{\authors{}}
+\date{} % oder \today eingeben
+%% --
+
+% \maketitle
+%% --
+\input{./content/main} %% je nach Blatt ändern
+
+
+
+
+
+
+%% --
+\end{document}

@@ -1,0 +1,178 @@
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% art.tex
+%% Layout, Font, erg. Pakete etc
+%% Stand 2022/04/20
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{onlyamsmath}			% Fehler bei Eingabe Mathematik
+\usepackage[l2tabu,orthodox]{nag} 	% Fehler im LaTeX-Code
+
+
+%% -- Für alle, die kein UTF8 eingestellt haben
+%% --
+
+\usepackage{selinput} 		% Automatische Wahl der "encoding"
+	\SelectInputMappings{	% für alle, die immer noch kein UTF8 nutzen	
+		,adieresis={ä}		% texdoc selinput
+       	,germandbls={ß}		%
+            }
+\usepackage[T1]{fontenc}   % 
+
+
+%% --  Wir schreiben deutschen Text und nutzen die deutschen Trennungsregeln
+%% --
+
+\usepackage[english]{babel}
+% \usepackage[babel,german=guillemets]{csquotes} % \enquote{Text}
+% \babelprovide[hyphenrules=ngerman-x-latest]{ngerman}
+
+
+%% -- Times New Roman
+%% -- das möchten wir nicht benutzen
+
+%\usepackage{mathptmx}			
+%	\usepackage[scaled=.90]{helvet}
+%	\usepackage{courier}
+	
+	
+%% -- Alternative lmodern
+%% -- das wollen wir
+
+\usepackage{lmodern}
+\DeclareMathVersion{sans}
+	\SetSymbolFont{letters}{sans}{OML}{cmbr}{m}{it} % Math letters from Latin Modern Sans
+	\SetSymbolFont{operators}{sans}{OT1}{lmss}{m}{n} % Math operators
+	\SetSymbolFont{symbols}{sans}{OMS}{lmsy}{m}{n} % Math symbols
+	\SetMathAlphabet{\mathrm}{sans}{OT1}{lmr}{m}{n} % Large symbols
+	\SetMathAlphabet{\mathsf}{sans}{OT1}{lmss}{m}{n}
+	\SetMathAlphabet{\mathit}{sans}{OT1}{lmr}{m}{it}
+
+%% --
+
+
+%% -- Layout siehe KOMA-Script
+
+\addtokomafont{title}{\let\huge\Large} 
+\addtokomafont{author}{\large} 
+\addtokomafont{date}{\normalsize}
+%
+\renewcommand*{\thesubsection}{\arabic{subsection}.\kern1pt}
+\RedeclareSectionCommand[font = \itshape]{subsection}
+\setcounter{secnumdepth}{\subsubsectionnumdepth} 
+%
+\renewcommand*{\thesubsubsection}{\arabic{subsubsection}.\kern2pt} 
+%
+\RedeclareSectionCommand[%
+  	,beforeskip		= .5\baselineskip 	% Etwas Abstand
+	,afterskip		= -0.1em			% Spitzmarke, d.h. kein Absatz
+	,font			= \normalfont	%	
+	]{subsubsection}
+
+
+%% -- Sinnvolle Pakete
+%% --
+%% -- Bessere Listen 
+
+\usepackage[shortlabels,inline]{enumitem} 	% texdoc enumitem
+
+%% -- Große Tabellen
+
+\usepackage{longtable}
+
+%% -- Kommentare
+
+\usepackage{verbatim}
+
+%% -- Kopf/Fußzeile
+%% -- 
+\usepackage{scrlayer-scrpage}
+\clearpairofpagestyles
+\addtokomafont{pagehead}{\upshape}
+% \ohead{\footnotesize\authorss{}}
+\cfoot{\pagemark}
+% \ihead{\footnotesize\numbering}
+
+
+%% -- Weitere sinnvolle Pakete
+%% --
+\usepackage[%
+	,newcommands
+	,footnotes
+	,raggedrightboxes
+		]{ragged2e}	% Für Flattersatz
+	
+
+%% --  Mathematikumgebungen
+
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{mathtools}
+
+\usepackage{verbatim}
+
+
+%% -- Mathematische Umgebungen
+%% -- Siehe amsthm-manual
+
+\theoremstyle{plain}
+%
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{thm}[theorem]{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{satz}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{cor}[theorem]{Corollary}
+\newtheorem{korollar}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{lem}[theorem]{Lemma}
+%
+\theoremstyle{definition}
+%
+\newtheorem{definition}{Definition}[section]
+\newtheorem{defn}[definition]{Definition}
+\newtheorem{example}{Example}[section]
+\newtheorem{examp}[example]{Example}
+\newtheorem{beispiel}[example]{Example}
+%
+\theoremstyle{remark}
+%
+\newtheorem*{note}{Remark}
+\newtheorem*{rem}{Remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{reminder}{Reminder}
+
+
+%% -- Richtige Abkürzungen; bitte auch in xspace-manual reinsehen
+%% -- Bei Verwendung von \usepackage{hyperref} nach diesem Paket laden
+\usepackage{xspace}
+\newcommand{\zB}{z.\,B.\xspace}
+\newcommand{\og}{o.\,g.\xspace}
+\newcommand{\Dh}{d.\,h.\xspace}
+\newcommand{\etc}{etc.\xspace}
+\newcommand{\bzw}{bzw.\xspace}
+
+
+%% -- Querverweise Pakete
+\usepackage[ngerman]{varioref}
+\usepackage[breaklinks = true]{hyperref}
+\usepackage{cleveref}
+\hypersetup{
+	,colorlinks = true % Für Onlineversion true
+	,urlcolor = blue % Farbe
+	,citecolor = blue %
+	,linkcolor = blue %
+	% ,hidelinks % Vor dem Druck entfernen
+}
+
+
+%% -- schwarzes Quadrat
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+
+%% -- Aligned Overset
+\usepackage{aligned-overset}
+
+\usepackage{soul}
+\usepackage{xcolor}
+
+\allowdisplaybreaks
