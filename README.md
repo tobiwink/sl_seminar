@@ -24,3 +24,5 @@ and run the notebook with:
 ```bash
 jupyter notebook
 ```
+
+Then select the notebook `main.ipynb` and run the cells.
