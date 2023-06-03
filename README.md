@@ -7,7 +7,7 @@ This Github repository contains the material for the first presentation of the [
 The manuscript and the presentation slides are available in the root folder, the Overleaf project is in the `latex` folder.
 To run the code, you need to install the packages listed in the `requirements.txt` file with Python 3.8.5.
 
-If you use an Anaconda environment, you can create a new environment called `sl_seminar` that has the requirements, using the following command:
+If you use Anaconda, you can create a new environment called `sl_seminar` that has the requirements, using the following command:
 
 ```bash
 conda env create -f environment.yml
